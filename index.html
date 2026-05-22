@@ -1,192 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta name="google-site-verification" content="-599iql3b9K556Ob4IYqSVy71YFqyRTFsIsLV1aF6i4" />
- <meta name="google-site-verification" content="NY7Jh0VaXWOucvifBEshpca1HCC5fdff2Ht_9zZyiKg" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>V∅IDR↑SE.</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="-599iql3b9K556Ob4IYqSVy71YFqyRTFsIsLV1aF6i4" />
+  <meta name="google-site-verification" content="NY7Jh0VaXWOucvifBEshpca1HCC5fdff2Ht_9zZyiKg" />
 
-  body {
-    background: #080808;
-    color: #EEEEF5;
-    font-family: 'Share Tech Mono', monospace;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 24px;
-  }
+  <!-- SEO Meta -->
+  <title>VOIDRISE — Indie Game Studio | Puzzle Games on Google Play</title>
+  <meta name="description" content="VOIDRISE is an indie game studio crafting addictive puzzle experiences. Play our games Letter Hunt and One Stroke on Google Play.">
+  <meta name="keywords" content="VOIDRISE, indie games, puzzle games, Letter Hunt, One Stroke, mobile games, Google Play, Android games">
+  <meta name="author" content="VOIDRISE">
 
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image:
-      linear-gradient(rgba(123,47,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(123,47,255,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VOIDRISE — Indie Game Studio">
+  <meta property="og:description" content="Crafting addictive puzzle experiences. Play Letter Hunt and One Stroke on Google Play.">
+  <meta property="og:url" content="https://harsha07xy.github.io/">
 
-  .brand {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 900;
-    font-size: clamp(36px, 12vw, 88px);
-    letter-spacing: 4px;
-    margin-bottom: 12px;
-    animation: fadeUp 0.8s ease both;
-  }
+  <!-- Favicon (inline SVG data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 
-  .void-o {
-    color: transparent;
-    -webkit-text-stroke: 3px #7B2FFF;
-    filter: drop-shadow(0 0 14px #7B2FFF88);
-    animation: glow 3s ease-in-out infinite;
-  }
-  @keyframes glow {
-    0%,100% { filter: drop-shadow(0 0 14px #7B2FFF88); }
-    50%      { filter: drop-shadow(0 0 28px #7B2FFFcc); }
-  }
-
-  .arrow {
-    color: #00FFD1;
-    -webkit-text-fill-color: #00FFD1;
-    display: inline-block;
-    animation: bounce 1.6s ease-in-out infinite;
-  }
-  @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(-6px); }
-  }
-
-  .rise { color: #00FFD1; -webkit-text-fill-color: #00FFD1; }
-  .dot  { color: #00FFD1; -webkit-text-fill-color: #00FFD1; }
-
-  .tagline {
-    font-size: 11px;
-    letter-spacing: 5px;
-    color: #444;
-    text-transform: uppercase;
-    margin-bottom: 56px;
-    animation: fadeUp 0.9s ease both 0.15s;
-  }
-
-  .divider {
-    width: 60px; height: 1px;
-    background: linear-gradient(90deg, transparent, #7B2FFF, transparent);
-    margin: 0 auto 48px;
-    animation: fadeUp 0.9s ease both 0.2s;
-  }
-
-  .app-card {
-    background: #0F0F14;
-    border: 1px solid #1a1a28;
-    border-radius: 16px;
-    padding: 28px 36px;
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 14px;
-    text-decoration: none;
-    display: block;
-    transition: border-color 0.25s, transform 0.25s;
-    animation: fadeUp 1s ease both 0.3s;
-  }
-  .app-card:hover {
-    border-color: #00FFD1;
-    transform: translateY(-3px);
-  }
-
-  .app-emoji { font-size: 30px; margin-bottom: 10px; display: block; }
-
-  .app-name {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 15px;
-    font-weight: 900;
-    color: #EEEEF5;
-    letter-spacing: 2px;
-    margin-bottom: 6px;
-  }
-
-  .app-desc { font-size: 11px; color: #555; letter-spacing: 2px; }
-
-  .play-badge {
-    display: inline-block;
-    margin-top: 14px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #00FFD1;
-    border: 1px solid rgba(0,255,209,0.3);
-    padding: 5px 14px;
-    border-radius: 20px;
-  }
-
-  .soon-card {
-    background: #0F0F14;
-    border: 1px dashed #1a1a28;
-    border-radius: 16px;
-    padding: 20px 36px;
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 52px;
-    animation: fadeUp 1s ease both 0.4s;
-  }
-  .soon-text { font-size: 11px; letter-spacing: 3px; color: #2a2a2a; text-transform: uppercase; }
-
-  .email-link {
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #444;
-    text-decoration: none;
-    transition: color 0.2s;
-    animation: fadeUp 1s ease both 0.5s;
-    display: block;
-    margin-bottom: 36px;
-  }
-  .email-link:hover { color: #7B2FFF; }
-
-  .footer {
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: #1e1e1e;
-    text-transform: uppercase;
-    animation: fadeUp 1s ease both 0.6s;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-</style>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1 class="brand">
-    V<span class="void-o">∅</span>IDR<span class="arrow">↑</span><span class="rise">SE</span><span class="dot">.</span>
-  </h1>
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" aria-hidden="true"></div>
 
-  <p class="tagline">Rise from nothing to everything</p>
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo" aria-label="VOIDRISE Home">
+        V<span class="void-o">∅</span>IDR<span class="arrow">↑</span>SE
+      </a>
 
-  <div class="divider"></div>
+      <div class="nav-links" id="nav-links">
+        <a href="#games">Games</a>
+        <a href="#why-play">Why Play</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </div>
 
-  <a class="app-card" href="https://play.google.com/store/apps/details?id=com.cs_boiii.one_stroke" target="_blank" rel="noopener">
-    <span class="app-emoji">🧩</span>
-    <div class="app-name">One Stroke</div>
-    <div class="app-desc">Puzzle · Focus · Brain Training</div>
-    <span class="play-badge">▶ GET IT ON GOOGLE PLAY</span>
-  </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+      </button>
 
-  <div class="soon-card">
-    <p class="soon-text">// More apps coming soon</p>
-  </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
 
-  <a class="email-link" href="mailto:help.teamharsha@gmail.com">help.teamharsha@gmail.com</a>
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Indie Game Studio
+      </div>
 
-  <p class="footer">© 2026 V∅IDR↑SE. All rights reserved.</p>
+      <h1 class="hero-title">
+        V<span class="void-o">∅</span>IDR<span class="arrow-char">↑</span>SE<span class="hero-dot">.</span>
+      </h1>
+
+      <p class="hero-tagline">
+        Crafting addictive puzzle experiences that challenge your mind.<br>
+        Available on Google Play.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#games" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Explore Games
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Contact Us
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-label="Scroll down">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== GAMES SECTION ===================== -->
+  <section class="games" id="games">
+    <div class="container">
+      <div class="games-header reveal">
+        <span class="section-label">Our Games</span>
+        <h2 class="section-title">Play. Solve. Conquer.</h2>
+        <p class="section-subtitle">
+          Handcrafted puzzle games designed to challenge your mind and keep you entertained for hours.
+        </p>
+      </div>
+
+      <div class="games-grid">
+        <!-- Game Card 1: One Stroke -->
+        <div class="game-card reveal">
+          <div class="game-card-image">
+            <img src="assets/one stroke.webp" alt="One Stroke - Puzzle Game Icon" loading="lazy">
+          </div>
+          <div class="game-card-body">
+            <span class="game-card-genre">Puzzle • Brain Teaser</span>
+            <h3 class="game-card-title">One Stroke</h3>
+            <p class="game-card-desc">
+              Draw a continuous line through every node in this brain-teasing puzzle. Simple rules, infinite challenge — can you solve them all in one stroke?
+            </p>
+            <div class="game-card-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.cs_boiii.one_stroke" target="_blank" rel="noopener" class="play-store-btn" aria-label="Download One Stroke on Google Play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.396 12l2.302-3.492zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>
+                Google Play
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Card 2: Letter Hunt -->
+        <div class="game-card reveal">
+          <div class="game-card-image">
+            <img src="assets/letterhunt.webp" alt="Letter Hunt - Word Puzzle Game Icon" loading="lazy">
+          </div>
+          <div class="game-card-body">
+            <span class="game-card-genre">Word • Observation</span>
+            <h3 class="game-card-title">Letter Hunt</h3>
+            <p class="game-card-desc">
+              Sharpen your eyes and hunt for hidden letters in this captivating word puzzle. Every level is a new challenge for your observation skills!
+            </p>
+            <div class="game-card-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.voidrise.letter_hunt" target="_blank" rel="noopener" class="play-store-btn" aria-label="Download Letter Hunt on Google Play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.396 12l2.302-3.492zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>
+                Google Play
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS SECTION ===================== -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <div class="stat-number" data-count="2" data-suffix="">0</div>
+          <div class="stat-label">Published Games</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="100" data-suffix="%">0</div>
+          <div class="stat-label">Free to Play</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="150" data-suffix="+">0</div>
+          <div class="stat-label">Countries Reached</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="5" data-suffix="★">0</div>
+          <div class="stat-label">Star Ratings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY PLAY GAMES SECTION ===================== -->
+  <section class="why-play" id="why-play">
+    <div class="container">
+      <div class="why-play-header reveal">
+        <span class="section-label">Why Play Games?</span>
+        <h2 class="section-title">Gaming Is Good for You.</h2>
+        <p class="section-subtitle">
+          Puzzle games aren't just fun — they sharpen your mind, reduce stress, and boost creativity. Here's why you should play every day.
+        </p>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="benefits-grid">
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"></path><line x1="9" y1="21" x2="15" y2="21"></line></svg>
+          </div>
+          <h3>Boosts Brain Power</h3>
+          <p>Puzzle games improve memory, logical thinking, and problem-solving skills. Studies show that just 15–30 minutes of daily puzzle gameplay can enhance cognitive function and keep your brain sharp at any age.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon benefit-icon--green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path></svg>
+          </div>
+          <h3>Reduces Stress & Anxiety</h3>
+          <p>Playing casual puzzle games triggers a flow state — your mind focuses on the game and forgets worries. Research shows that mobile gaming for 20–30 minutes daily can significantly lower cortisol (stress hormone) levels.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon benefit-icon--cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3>Improves Focus & Attention</h3>
+          <p>Games like One Stroke and Letter Hunt require sustained concentration. Regular play trains your attention span and helps you focus better at work, studies, and everyday tasks. Even 10 minutes a day makes a difference.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon benefit-icon--orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <h3>Sparks Creativity</h3>
+          <p>Puzzle games push you to think outside the box. When you approach a tricky level from different angles, you're training your brain to find creative solutions — a skill that transfers to real life challenges.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon benefit-icon--pink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>
+          </div>
+          <h3>Fun for All Ages</h3>
+          <p>Whether you're a student, a working professional, or a senior — puzzle games are universally enjoyable. They're easy to learn, require no special skills, and provide a healthy break from screen fatigue.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon benefit-icon--yellow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+          </div>
+          <h3>Boosts Mood & Happiness</h3>
+          <p>Completing a challenging puzzle level releases dopamine — the "feel-good" chemical in your brain. This instant sense of accomplishment keeps you motivated, happy, and coming back for more!</p>
+        </div>
+
+      </div>
+
+      <!-- How Long to Play -->
+      <div class="playtime-guide reveal">
+        <div class="playtime-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="playtime-content">
+          <h3>How Long Should You Play?</h3>
+          <p>Experts recommend <strong>20–40 minutes</strong> of puzzle gaming per day for the best cognitive benefits. Short, focused sessions are more effective than long marathons. Take breaks every 20 minutes to rest your eyes. A few focused rounds of One Stroke or Letter Hunt during your morning commute, lunch break, or before bed is the perfect balance of fun and brain training!</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="why-play-cta reveal">
+        <h3>Ready to Train Your Brain?</h3>
+        <p>Download our free puzzle games and start your daily brain workout today.</p>
+        <a href="#games" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Explore Our Games
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text reveal">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">Built by Gamers,<br>for Gamers.</h2>
+          <p>
+            VOIDRISE is an independent game studio passionate about creating elegant puzzle experiences 
+            that are easy to learn but hard to master. We believe great games don't need to be complicated — 
+            they need to be captivating.
+          </p>
+          <p>
+            From brain-teasing line puzzles to sharp-eyed letter hunts, every game we craft 
+            is designed to spark joy and keep your mind sharp. We're just getting started.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <div>
+                <h4>Crafted with Care</h4>
+                <p>Every level is hand-designed for the perfect challenge curve.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></svg>
+              </div>
+              <div>
+                <h4>Available Worldwide</h4>
+                <p>Our games reach players in 150+ countries on Google Play.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path></svg>
+              </div>
+              <div>
+                <h4>Free to Play</h4>
+                <p>All our games are completely free. No paywalls, just fun.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual reveal">
+          <div class="about-glow-card">
+            <div class="about-glow-card-inner">
+              <div class="about-logo">
+                V<span style="color: transparent; -webkit-text-stroke: 2px #7B2FFF;">∅</span>IDR<span style="color: #00FFD1;">↑</span>SE<span style="color: #FF2F7B;">.</span>
+              </div>
+              <p class="about-mission">"Simple rules.<br>Infinite challenge.<br>Pure fun."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-header reveal">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">
+          Have questions, feedback, or collaboration ideas? We'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Email -->
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <h3>Email Us</h3>
+          <p>Drop us a line anytime</p>
+          <a href="mailto:voidrise.games@gmail.com">voidrise.games@gmail.com</a>
+        </div>
+
+        <!-- Instagram -->
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </div>
+          <h3>Instagram</h3>
+          <p>Follow us for updates</p>
+          <a href="https://www.instagram.com/voidrise.official?igsh=N3o1cTk0NGZtOW81" target="_blank" rel="noopener">@voidrise.official</a>
+        </div>
+
+        <!-- Play Store -->
+        <div class="contact-card reveal">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3>Play Store</h3>
+          <p>Download our games</p>
+          <a href="https://play.google.com/store/apps/developer?id=VOIDRISE" target="_blank" rel="noopener">View on Google Play</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          V∅IDR↑SE.
+        </div>
+
+        <div class="footer-links">
+          <a href="#games">Games</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="mailto:voidrise.games@gmail.com" aria-label="Email VOIDRISE">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+          <a href="https://www.instagram.com/voidrise.official?igsh=N3o1cTk0NGZtOW81" target="_blank" rel="noopener" aria-label="VOIDRISE on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> VOIDRISE. All rights reserved. Crafted with ❤️ for gamers.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>
